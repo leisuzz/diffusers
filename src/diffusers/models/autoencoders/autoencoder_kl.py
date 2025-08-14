@@ -1,4 +1,4 @@
-# Copyright 2024 The HuggingFace Team. All rights reserved.
+# Copyright 2025 The HuggingFace Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -63,8 +63,8 @@ class AutoencoderKL(ModelMixin, ConfigMixin, FromOriginalModelMixin, PeftAdapter
             Synthesis with Latent Diffusion Models](https://huggingface.co/papers/2112.10752) paper.
         force_upcast (`bool`, *optional*, default to `True`):
             If enabled it will force the VAE to run in float32 for high image resolution pipelines, such as SD-XL. VAE
-            can be fine-tuned / trained to a lower range without loosing too much precision in which case
-            `force_upcast` can be set to `False` - see: https://huggingface.co/madebyollin/sdxl-vae-fp16-fix
+            can be fine-tuned / trained to a lower range without losing too much precision in which case `force_upcast`
+            can be set to `False` - see: https://huggingface.co/madebyollin/sdxl-vae-fp16-fix
         mid_block_add_attention (`bool`, *optional*, default to `True`):
             If enabled, the mid_block of the Encoder and Decoder will have attention blocks. If set to false, the
             mid_block will only have resnet blocks
@@ -90,7 +90,7 @@ class AutoencoderKL(ModelMixin, ConfigMixin, FromOriginalModelMixin, PeftAdapter
         shift_factor: Optional[float] = None,
         latents_mean: Optional[Tuple[float]] = None,
         latents_std: Optional[Tuple[float]] = None,
-        force_upcast: float = True,
+        force_upcast: bool = True,
         use_quant_conv: bool = True,
         use_post_quant_conv: bool = True,
         mid_block_add_attention: bool = True,
